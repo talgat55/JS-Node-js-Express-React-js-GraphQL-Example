@@ -2,12 +2,12 @@ import express from "express";
 import graphlHTTP from "express-graphql";
 import mongoose from "mongoose";
 import schema from "./schema";
-
+import cors from "cors";
 
 
 const app = express();
 const PORT = 4000;
-
+app.use(cors());
 
 mongoose.Promise = global.Promise;
 mongoose.connect("mongodb://localhost/notetaking_db", {
